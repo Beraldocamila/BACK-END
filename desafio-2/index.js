@@ -10,15 +10,15 @@ class Contenedor{
 
     async save(product){
         let products = JSON.parse( await fs.readFile(this.ruta, 'utf-8'));
-        let newId = 0 ;
-
-        if(products.length == 0){
+        let newId="";
+        
+        if(products.length == 0){   
             newId = 1;
         }else{
-            newId= newId+1;
+            newId=products.length+1; 
         }
 
-        product ={id:newId,...product}
+        product= {id:newId,...product};
         let data = [...products,product]
 
         try {
@@ -67,7 +67,7 @@ class Contenedor{
 
 const products = new Contenedor('./products.json');
 
-    // products.save({title: "Television", price: "$60.000", thumbnail: "http://medias.musimundo.com/medias/00431006-144267-144267-01-144267-01.jpg-size515?context=bWFzdGVyfGltYWdlc3w3OTI5NHxpbWFnZS9qcGVnfGhlZi9oNDQvMTAzODA5MzUyOTkxMDIvMDA0MzEwMDYtMTQ0MjY3LTE0NDI2N18wMS0xNDQyNjdfMDEuanBnX3NpemU1MTV8Y2JlZTFkMjZjZDFiMDUyNmUxZjNkZTQwZTEwZjZmODg4ZmJkZGVkMWIzOGI4ZDAyNzYwNGJkYWMwYWU1ZTAwMA"});
+    products.save({title: "Television", price: "$60.000", thumbnail: "http://medias.musimundo.com/medias/00431006-144267-144267-01-144267-01.jpg-size515?context=bWFzdGVyfGltYWdlc3w3OTI5NHxpbWFnZS9qcGVnfGhlZi9oNDQvMTAzODA5MzUyOTkxMDIvMDA0MzEwMDYtMTQ0MjY3LTE0NDI2N18wMS0xNDQyNjdfMDEuanBnX3NpemU1MTV8Y2JlZTFkMjZjZDFiMDUyNmUxZjNkZTQwZTEwZjZmODg4ZmJkZGVkMWIzOGI4ZDAyNzYwNGJkYWMwYWU1ZTAwMA"});
     // products.save({title: "Computer", price: "$100.000", thumbnail: "https://ar-media.hptiendaenlinea.com/catalog/product/cache/b3b166914d87ce343d4dc5ec5117b502/3/1/310G4LA-1_T1643307273.png"});
     // products.save({title: "Watch", price: "$40.000", thumbnail: "https://stylewatch.vtexassets.com/arquivos/ids/210880-800-auto?width=800&height=auto&aspect=true"});
 
