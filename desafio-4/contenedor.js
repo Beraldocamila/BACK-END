@@ -30,7 +30,10 @@ class Contenedor{
     putProd(id,prod){
         this.productos.forEach(p=>{
             if(p.id == Number(id)){
-                p=prod;
+                
+
+                p={...prod,id:id};
+                this.productos[id]=p;
             }
         })
         return this.productos;
