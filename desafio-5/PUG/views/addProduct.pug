@@ -1,0 +1,22 @@
+ul
+    li
+        button
+            a(href="/productos/mostrarProductos") Mostrar productos
+    li
+        button 
+            a(href="/productos/agregarProducto") Agregar producto
+
+
+h2 Agregar productos
+
+    form(action="/productos" method="post" enctype="application/json")
+        div(class="mb-3")
+            label(for="title") Product's name:
+            input(type="text" id="title" name="title")
+        div(class="mb-3")
+            label(for="price") Price:
+            input(type="number" id="price" name="price")
+        div(class="mb-3")
+            label(for="thumbnail") Thumbnail:
+            input(type="text" id="thumbnail")
+        button(type="submit" class="btn btn-primary") Add

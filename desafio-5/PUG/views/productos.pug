@@ -1,0 +1,29 @@
+ul
+    li
+        button
+            a(href="/productos/mostrarProductos") Mostrar productos
+    li
+        button 
+            a(href="/productos/agregarProducto") Agregar producto
+
+h2 Productos
+
+table
+    thead
+        tr
+            th Id
+            th Nombre
+            th Precio
+            th Imagen
+    tbody
+        each p in productos 
+            tr
+                td= p.id
+                td= p.title
+                td= p.price
+                td
+                    img(src="p.thumbnail" width="100px")
+
+
+
+
