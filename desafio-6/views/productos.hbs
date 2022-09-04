@@ -1,0 +1,31 @@
+<ul>
+    <li><button><a href="/productos/mostrarProductos">Mostrar productos</a></button></li>
+    <li><button><a href="/productos/agregarProducto">Agregar producto</a></button></li>
+</ul>
+
+<h2>Productos</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Imagen</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each productos}}
+            <tr>
+                <td>{{this.id}}  </td>
+                <td>{{this.title}}</td>
+                <td>{{this.price}}</td>
+                <td><a href="/productos/detalle/{{this.id}}"><img src="{{this.thumbnail}}" width="100px"></a></td>
+            </tr>
+
+        {{/each}}
+    </tbody>
+</table>
+
+
+

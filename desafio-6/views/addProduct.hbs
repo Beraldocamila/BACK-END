@@ -1,0 +1,22 @@
+<ul>
+    <li><button><a href="/productos/mostrarProductos">Mostrar productos</a></button></li>
+    <li><button><a href="/productos/agregarProducto">Agregar producto</a></button></li>
+</ul>
+
+<h2>Agregar productos</h2>
+
+<form action="/productos" method="post">
+    <div class="mb-3">
+        <label for="title" class="form-label">Product's name:</label>
+        <input type="text" class="form-control" id="title" name="title" aria-describedby="title">
+    </div>
+    <div class="mb-3">
+        <label for="price" class="form-label">Price:</label>
+        <input type="number" class="form-control" id="price" name="price" >
+    </div>                   
+    <div class="mb-3">
+        <label for="thumbnail" class="form-label">Thumbnail:</label>
+        <input type="text" class="form-control" id="thumbnail" name="thumbnail" >
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>
