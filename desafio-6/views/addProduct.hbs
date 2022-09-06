@@ -1,22 +1,56 @@
-<ul>
-    <li><button><a href="/productos/mostrarProductos">Mostrar productos</a></button></li>
-    <li><button><a href="/productos/agregarProducto">Agregar producto</a></button></li>
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
 
-<h2>Agregar productos</h2>
 
-<form action="/productos" method="post">
-    <div class="mb-3">
-        <label for="title" class="form-label">Product's name:</label>
-        <input type="text" class="form-control" id="title" name="title" aria-describedby="title">
+<body>
+    <h2>Agregar producto</h2>
+
+    <form onsubmit="return addProduct(this)">
+        <div class="mb-3">
+            <label for="title" class="form-label">Product's name:</label>
+            <input type="text" class="form-control" id="title" name="title" aria-describedby="title" required>
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price:</label>
+            <input type="number" class="form-control" id="price" name="price" required>
+        </div>                   
+        <div class="mb-3">
+            <label for="thumbnail" class="form-label">Imagen:</label>
+            <input type="text" class="form-control" id="thumbnail" name="thumbnail" >
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+    <button><a href="/productos/mostrarProductos">Mostrar productos</a></button>
+
+    <h2>Lista de productos</h2>
+    <div id="products">
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Imagen</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
     </div>
-    <div class="mb-3">
-        <label for="price" class="form-label">Price:</label>
-        <input type="number" class="form-control" id="price" name="price" >
-    </div>                   
-    <div class="mb-3">
-        <label for="thumbnail" class="form-label">Thumbnail:</label>
-        <input type="text" class="form-control" id="thumbnail" name="thumbnail" >
-    </div>
-    <button type="submit" class="btn btn-primary">Add</button>
-</form>
+
+    <h2>Centro de Mensajes</h2>
+    <form onsubmit="return addMessage(this)">
+        <input type="text" id="username" placeholder="Ingrese mail">
+        <div id="messages"></div>
+        <input type="text" id="text" placeholder="comience a chatear">
+        <input type="submit" value="Enviar">
+    </form>
+
+</body>
+</html>
