@@ -6,16 +6,16 @@ const products = require('../contenedor')
 
 // mostrar productos
 router.get('/', (req, res)=>{
-    res.render('addProduct.handlebars', {productos:products.getAll()})
+    res.render('addProduct.handlebars', {products:products.getAll()})
 })
 
-router.get('/mostrarProductos', (req, res)=>{
-    res.render('productos.handlebars', {productos:products.getAll()})
+router.get('/productos', (req, res)=>{
+    res.render('productos.handlebars', {products:products.getAll()})
 })
 
 // agregar producto
 
-router.post('/', (req,res)=>{
+router.post('/productos', (req,res)=>{
     products.postProd(req.body);
     res.redirect('/productos')
 

@@ -37,13 +37,13 @@ const addMessage=(m)=>{
 }
 
 const addProduct = (p)=>{
-    let title= document.getElementById('title').value;
-    let price= document.getElementById('price').value;
-    let thumbnail= document.getElementById('thumbail').value
+    // let title= document.getElementById('title').value;
+    // let price= document.getElementById('price').value;
+    // let thumbnail= document.getElementById('thumbail').value
     const prod ={
-        title:title,
-        price:price,
-        thumbnail: thumbnail
+        title:document.getElementById("title").value,
+        price:document.getElementById("price").value,
+        thumbnail: document.getElementById("thumbnail").value
     }
     socket.emit('new-product', prod)
     return false;

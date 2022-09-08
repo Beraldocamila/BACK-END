@@ -23,17 +23,17 @@ server.on('error',(err)=>{
 
 io.on('connection', (socket)=>{
     console.log('Se conectó un cliente');
-    socket.emit('messages', {messages, productos:products.getAll()})
+    socket.emit('messages', {messages, products:products.getAll()})
 
     socket.on('new-message', (data)=>{
         messages.push(data);
-        let all = {messages: messages, productos:products.getAll()}
+        let all = {messages: messages, products:products.getAll()}
         io.sockets.emit('messages', all)
     })
 
     socket.on('new-product', (data)=>{
         products.postProd(data);
-        let all = {messages: messages, productos:products.getAll()}
+        let all = {messages: messages, products:products.getAll()}
         io.sockets.emit('messages', all)
     })
 })

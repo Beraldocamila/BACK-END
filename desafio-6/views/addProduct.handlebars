@@ -15,19 +15,19 @@
     <form onsubmit="return addProduct(this)">
         <div class="mb-3">
             <label for="title" class="form-label">Product's name:</label>
-            <input type="text" class="form-control" id="title" name="title" aria-describedby="title" required>
+            <input type="text" class="form-control" id="title"  aria-describedby="title">
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Price:</label>
-            <input type="number" class="form-control" id="price" name="price" required>
+            <input type="number" class="form-control" id="price">
         </div>                   
         <div class="mb-3">
             <label for="thumbnail" class="form-label">Imagen:</label>
-            <input type="text" class="form-control" id="thumbnail" name="thumbnail" >
+            <input type="text" class="form-control" id="thumbnail" >
         </div>
-        <button type="submit" class="btn btn-primary">Add</button>
+        <input type="submit" class="btn btn-primary" value="Add">
     </form>
-    <button><a href="/productos/mostrarProductos">Mostrar productos</a></button>
+    <button><a href="/productos">Mostrar productos</a></button>
 
     <h2>Lista de productos</h2>
     <div id="products">
@@ -51,6 +51,6 @@
         <input type="text" id="text" placeholder="comience a chatear">
         <input type="submit" value="Enviar">
     </form>
-    <script src="./main.js"></script>
+    <script src="../public/main.js"></script>
 </body>
 </html>

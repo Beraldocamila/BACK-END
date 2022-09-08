@@ -1,7 +1,6 @@
-<body>
-    <h2>Productos</h2>
+<h2>Productos</h2>
 
-{{#if productos.length}}
+{{#if products.length}}
     <table>
         <thead>
             <tr>
@@ -12,12 +11,12 @@
             </tr>
         </thead>
         <tbody>
-            {{#each productos}}
+            {{#each products}}
                 <tr>
-                    <td>{{this.id}}  </td>
-                    <td>{{this.title}}</td>
-                    <td>{{this.price}}</td>
-                    <td><a href="/productos/detalle/{{this.id}}"><img src="{{this.thumbnail}}" width="100px"></a></td>
+                    <td>{{id}}  </td>
+                    <td>{{title}}</td>
+                    <td>{{price}}</td>
+                    <td><img src="{{thumbnail}}" width="100px"></td>
                 </tr>
 
             {{/each}}
@@ -26,8 +25,7 @@
     {{else}}
     <div class='message'><h2>No hay ningun producto</h2></div>
     {{/if}}
-        <button><a href="/productos">Agregar producto</a></button>
+        <button><a href="/">Agregar producto</a></button>
 
-</body>
 
 

@@ -1,5 +1,6 @@
 class Contenedor{
     constructor (){
+
         this.productos=[];
     }
 
@@ -18,7 +19,7 @@ class Contenedor{
         prod.id = this.newId ++;
 
         this.productos.push(prod);
-        
+        return prod
     }
 }
 
