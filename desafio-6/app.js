@@ -3,12 +3,16 @@ const handlebars = require("express-handlebars").engine;
 const app = express();
 const router= require('./routes/productosRoutes');
 
+const handlebarsConig = {
+    defaultLayout: 'index.handlebars',
+  };
+app.engine('handlebars', handlebars(handlebarsConig));
 
-app.engine("hbs", handlebars({
-    extname:".hbs",
-    defaultLayout: 'index.hbs',
-    layoutsDir: __dirname + "/views/layouts"
-}));
+// app.engine("hbs", handlebars({
+//     extname:".hbs",
+//     defaultLayout: 'index.hbs',
+//     layoutsDir: __dirname + "/views/layouts"
+// }));
 
 
 app.set('views', './views');
